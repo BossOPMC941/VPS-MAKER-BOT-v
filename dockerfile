@@ -9,6 +9,7 @@ RUN apt-get install -y systemd systemd-sysv dbus dbus-user-session
 RUN printf "systemctl start systemd-logind" >> /etc/profile
 RUN apt install curl -y
 RUN apt install ufw -y && ufw allow 80 && ufw allow 443 && apt install net-tools -y
+COPY VPS-MAKER-BOT-v /path/in/container/VPS-MAKER-BOT-v
 RUN cd VPS-MAKER-BOT-v
 RUN touch Dockerfile
 RUN build -t ubuntu-22.04-with-tmate .
